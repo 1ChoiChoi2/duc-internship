@@ -60,7 +60,7 @@ const HotCollections = () => {
             </div>
           </div>
           {loading ? (
-            <OwlCarousel>
+            <OwlCarousel {...options}>
               {new Array(4).fill(0).map((_, index) => (
                 <div key={index}>
                   <div className="nft_coll">
