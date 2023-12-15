@@ -1,11 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const BrowseByCategory = () => {
   return (
     <section id="section-category" className="no-top">
       <div className="container">
-        <div className="row">
+        <div className="row" data-aos="fade-right">
           <div className="col-lg-12">
             <div className="text-center">
               <h2>Browse by category</h2>

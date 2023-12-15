@@ -5,6 +5,10 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import axios from "axios";
 import Skeleton from "../UI/Skeleton";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const HotCollections = () => {
   const [NFTs, setNFTs] = useState([]);
@@ -62,7 +66,7 @@ const HotCollections = () => {
           {loading ? (
             <OwlCarousel {...options}>
               {new Array(4).fill(0).map((_, index) => (
-                <div key={index}>
+                <div key={index} data-aos="fade-up">
                   <div className="nft_coll">
                     <div className="nft_wrap">
                       <Skeleton width={500} height={200} />

@@ -6,6 +6,10 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import Skeleton from "../UI/Skeleton";
 import axios from "axios";
 import CountDown from "../UI/CountDown";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const NewItems = () => {
   const [NFTs, setNFTs] = useState([]);
@@ -59,7 +63,7 @@ const NewItems = () => {
           <OwlCarousel {...options}>
             {loading
               ? new Array(4).fill(0).map((_, index) => (
-                  <div key={index}>
+                  <div key={index} data-aos="fade-up">
                     <div className="nft__item">
                       <div className="author_list_pp">
                         <Skeleton width={50} height={50} borderRadius={50} />

@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import AuthorImage from "../../images/author_thumbnail.jpg";
 import axios from "axios";
 import Skeleton from "../UI/Skeleton";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const TopSellers = () => {
   const [authors, setAuthors] = useState([]);
@@ -34,7 +38,7 @@ const TopSellers = () => {
             <ol className="author_list">
               {loading
                 ? new Array(12).fill(0).map((_, index) => (
-                    <li key={index}>
+                    <li key={index} data-aos="fade-up">
                       <div className="author_list_pp">
                         <Skeleton width={45} height={45} borderRadius={50} />
                         <i className="fa fa-check"></i>
